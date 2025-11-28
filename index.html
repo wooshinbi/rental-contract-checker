@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임대차 계약서 안전성 점검</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-file-contract"></i>
+                <h1>임대차 계약서 안전성 점검</h1>
+            </div>
+            <p class="subtitle">AI가 분석하는 똑똑한 계약서 검토</p>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h2>계약서를 업로드하세요</h2>
+                    <p class="upload-description">PDF 또는 이미지 파일을 업로드하면<br>AI가 자동으로 분석합니다.</p>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="file-input-wrapper">
+                            <input type="file" id="fileInput" name="contract" accept=".pdf,.jpg,.jpeg,.png" required>
+                            <label for="fileInput" class="file-label">
+                                <i class="fas fa-file-upload"></i>
+                                <span id="fileName">파일 선택</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-submit" id="analyzeBtn">
+                            <i class="fas fa-search"></i> 계약서 분석하기
+                        </button>
+                    </form>
+                    <div class="file-info">
+                        <p><i class="fas fa-info-circle"></i> 지원 형식: PDF, JPG, PNG</p>
+                        <p><i class="fas fa-shield-alt"></i> 파일은 분석 후 즉시 삭제됩니다</p>
+                    </div>
+                </div>
+            </section>
+            <section class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-card">
+                    <div class="spinner"></div>
+                    <h3>계약서를 분석 중입니다...</h3>
+                    <p>AI가 계약서 내용을 검토하고 있습니다.</p>
+                </div>
+            </section>
+            <section class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <h2><i class="fas fa-clipboard-check"></i> 분석 결과</h2>
+                    <div class="safety-badge" id="safetyBadge">
+                        <div class="badge-content">
+                            <i class="fas fa-shield-alt"></i>
+                            <span id="safetyLevel">안전함</span>
+                        </div>
+                    </div>
+                    <div class="result-box">
+                        <h3><i class="fas fa-file-alt"></i> 계약서 요약</h3>
+                        <p id="summaryText"></p>
+                    </div>
+                    <div class="result-box risk-box">
+                        <h3><i class="fas fa-exclamation-triangle"></i> 주의사항</h3>
+                        <ul id="riskList"></ul>
+                    </div>
+                    <div class="result-box recommendation-box">
+                        <h3><i class="fas fa-lightbulb"></i> 개선 권장사항</h3>
+                        <ul id="recommendationList"></ul>
+                    </div>
+                    <button class="btn-secondary" id="resetBtn">
+                        <i class="fas fa-redo"></i> 다른 계약서 분석하기
+                    </button>
+                </div>
+            </section>
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>오류가 발생했습니다</h3>
+                    <p id="errorMessage"></p>
+                    <button class="btn-secondary" id="retryBtn">
+                        <i class="fas fa-redo"></i> 다시 시도하기
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 임대차 계약서 안전성 점검. Powered by Gemini AI</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

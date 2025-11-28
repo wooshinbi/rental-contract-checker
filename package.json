@@ -1,0 +1,22 @@
+{
+  "name": "rental-contract-checker",
+  "version": "1.0.0",
+  "description": "임대차 계약서 안전성 점검 웹사이트 - Gemini AI 기반 분석",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["rental", "contract", "analysis", "gemini", "ai"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
