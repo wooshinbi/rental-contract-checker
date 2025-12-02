@@ -6,7 +6,28 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+// ========== CORS 설정 추가 (Safe전세 연동용) ==========
+const cors = require('cors');
+
+app.use(cors({
+    origin: '*', // 모든 도메인 허용
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// 추가 CORS 헤더 설정
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+// ====================================================
+
+// ========== PORT 설정 추가 ==========
+const PORT = process.env.PORT || 10000;
+// ====================================
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
