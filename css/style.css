@@ -65,7 +65,13 @@ body {
 .recommendation-box { border-left-color: var(--success-color); }
 .error-card { background: white; border-radius: 1rem; padding: 3rem 2rem; box-shadow: var(--shadow-xl); max-width: 500px; margin: 0 auto; text-align: center; }
 .error-card i { font-size: 4rem; color: var(--danger-color); margin-bottom: 1.5rem; }
-.footer { background: rgba(255, 255, 255, 0.95); padding: 2rem 0; margin-top: 4rem; text-align: center; }
+.footer { background: rgba(255, 255, 255, 0.95); padding: 2rem 0; margin-top: 4rem; }
+.disclaimer { background: #fef3c7; border: 2px solid var(--warning-color); border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; text-align: left; }
+.disclaimer h4 { color: var(--warning-color); font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.disclaimer p { color: var(--text-primary); font-size: 0.9rem; line-height: 1.6; margin: 0.5rem 0; }
+.disclaimer strong { color: var(--danger-color); font-weight: 600; }
+.copyright { text-align: center; color: var(--text-secondary); font-size: 0.9rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+
 @media (max-width: 768px) {
     .logo h1 { font-size: 1.3rem; }
     .upload-card { padding: 2rem 1.5rem; }
